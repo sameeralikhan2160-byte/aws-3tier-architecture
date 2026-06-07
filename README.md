@@ -6,7 +6,7 @@ A production-ready, fault-tolerant 3-tier web architecture deployed on AWS, feat
 
 ## 📐 Architecture Overview
 
-![Three Tier App Architecture](screenshots/architecture.png)
+![Three Tier App Architecture](Screenshots/architecture.png)
 
 **Flow:**
 - **Route 53** → **Application Load Balancer** (across 2 Availability Zones)
@@ -87,26 +87,43 @@ A production-ready, fault-tolerant 3-tier web architecture deployed on AWS, feat
 ## 📸 Screenshots
 
 ### Architecture Diagram
-![Architecture](screenshots/architecture.png)
+![Architecture](Screenshots/architecture.png)
 
 ### Subnet Configuration
-![Subnets](screenshots/subnets1.png)
-![Subnets continued](screenshots/subnets2.png)
+![Subnets 1](Screenshots/subnets1.png)
+![Subnets 2](Screenshots/subnets2.png)
+
+### Route Tables
+![Route Tables](Screenshots/routetables.png)
+
+### Internet Gateway
+![Internet Gateway](Screenshots/igw.png)
+
+### NAT Gateway
+![NAT Gateway](Screenshots/nat.png)
 
 ### EC2 Instances Running
-![EC2 Instances](screenshots/ec2-instances.png)
+![EC2 Instances](Screenshots/ec2-instances.png)
 
-### SSH via Bastion Host to Private App Server
-![SSH Bastion](screenshots/ssh-bastion.png)
+### SSH via Bastion Host
+![SSH Bastion](Screenshots/ssh1.png)
 
-### Apache + PHP Setup on App Server
-![App Server Setup](screenshots/app-server-setup.png)
+### Apache (httpd) Setup
+![httpd](Screenshots/httpd.png)
 
-### PHP Server Response via curl
-![curl Test](screenshots/curl-test.png)
+### PHP Installation
+![PHP Install](Screenshots/phpinstall.png)
+
+### PHP Server Test
+![PHP 1](Screenshots/php1.png)
+![PHP 2](Screenshots/php2.png)
+![PHP 3](Screenshots/php3.png)
+
+### Load Balancer
+![Load Balancer](Screenshots/lb.png)
 
 ### RDS MySQL Database
-![RDS](screenshots/rds.png)
+![RDS](Screenshots/rds.png)
 
 ---
 
