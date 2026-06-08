@@ -1,6 +1,4 @@
-Here is the full README — copy everything from the line below and paste it into GitHub:
-
-markdown# Secure 3-Tier Web Architecture on AWS
+# Secure 3-Tier Web Architecture on AWS
 
 This is a project I built to practice designing and deploying a real-world cloud infrastructure on AWS. The idea was to set up a proper 3-tier architecture — web, application, and database — the way you'd actually do it in a production environment, with security and high availability in mind rather than just getting something running.
 
