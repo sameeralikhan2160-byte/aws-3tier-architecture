@@ -1,4 +1,6 @@
-# Secure 3-Tier Web Architecture on AWS
+Here is the full README — copy everything from the line below and paste it into GitHub:
+
+markdown# Secure 3-Tier Web Architecture on AWS
 
 This is a project I built to practice designing and deploying a real-world cloud infrastructure on AWS. The idea was to set up a proper 3-tier architecture — web, application, and database — the way you'd actually do it in a production environment, with security and high availability in mind rather than just getting something running.
 
@@ -11,14 +13,11 @@ The setup uses a custom VPC with public and private subnets spread across two Av
 ![Three Tier App Architecture](Screenshots/architecture.png)
 
 At a high level, requests come in from the internet, hit Route 53, then go to the Application Load Balancer which splits traffic between two EC2 app servers sitting in private subnets. Those app servers talk to an RDS MySQL database that has no public access at all. The only way to directly access any of the backend servers is through the Bastion Host (jump server) in the public subnet.
-
-```
 Internet → Route 53 → Application Load Balancer
-                              ↓
-              EC2 App Servers (PHP + Apache) — private subnets
-                              ↓
-                    RDS MySQL — isolated DB subnets
-```
+↓
+EC2 App Servers (PHP + Apache) — private subnets
+↓
+RDS MySQL — isolated DB subnets
 
 ---
 
@@ -155,11 +154,11 @@ wget https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-all-languages.tar.gz
 
 After everything was set up, I could reach phpMyAdmin through the ALB's DNS — which confirmed the full stack was working together correctly.
 
-![phpMyAdmin Login](Screenshots/Screenshot_2026-06-08_142329.png)
+![phpMyAdmin Login](Screenshots/Screenshot%202026-06-08%20142329.png)
 
 Logged in and connected directly to the RDS instance:
 
-![phpMyAdmin Dashboard](Screenshots/Screenshot_2026-06-08_142517.png)
+![phpMyAdmin Dashboard](Screenshots/Screenshot%202026-06-08%20142517.png)
 
 The dashboard confirms the connection details — MySQL 8.0.35 running on the RDS endpoint, PHP 8.2.18, Apache 2.4.59 on Amazon Linux, all working together.
 
@@ -194,19 +193,16 @@ The database runs on Amazon RDS in the private DB subnets with no public endpoin
 ## Security
 
 Security was one of the main goals of this project. The idea was that each tier can only talk to what it needs to, and nothing is exposed that doesn't have to be.
-
-```
 Internet
-   │
-   ▼
+│
+▼
 ALB Security Group  —  allows HTTP/HTTPS from anywhere
-   │
-   ▼
+│
+▼
 App Server Security Group  —  only accepts traffic from the ALB
-   │                           SSH only from Bastion Host
-   ▼
+│                           SSH only from Bastion Host
+▼
 DB Security Group  —  MySQL port 3306 open to app tier only
-```
 
 The Bastion Host is the only EC2 instance with a public IP. Everything else is locked inside private subnets.
 
